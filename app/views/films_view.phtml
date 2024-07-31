@@ -1,0 +1,29 @@
+<?php
+
+require_once BASE_PATH . '/app/controllers/films_controller.php';
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Films</title>
+</head>
+<body>
+    <?php if (isset($film)): ?>
+        <h1>Films Details</h1>
+        <p>Name: <?= htmlspecialchars($film['title']) ?></p>
+    <?php elseif (isset($films_list) && is_array($films_list)): ?>
+        <h1>Films List</h1>
+        <ul>
+            <?php foreach ($films_list['results'] as $film): ?>
+                <li><?= htmlspecialchars($film['title']) ?></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php else: ?>
+        <p>No data available.</p>
+    <?php endif; ?>
+</body>
+</html>

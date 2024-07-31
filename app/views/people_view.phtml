@@ -1,0 +1,39 @@
+<?php
+
+require_once BASE_PATH . '/app/controllers/people_controller.php';
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People</title>
+</head>
+<body>
+    <?php if (isset($person)): ?>
+        <h1>Person Details</h1>
+        <ul>
+            <li>Name: <?= htmlspecialchars($person['name']) ?></li>
+            <li>Height: <?= htmlspecialchars($person['height']) ?></li>
+            <li>Mass: <?= htmlspecialchars($person['mass']) ?></li>
+            <li>Hair color: <?= htmlspecialchars($person['hair_color']) ?></li>
+            <li>Skin color: <?= htmlspecialchars($person['skin_color']) ?></li>
+            <li>Eye color: <?= htmlspecialchars($person['eye_color']) ?></li>
+            <li>Hair color: <?= htmlspecialchars($person['hair_color']) ?></li>
+            <li>Birth year: <?= htmlspecialchars($person['birth_year']) ?></li>
+            <li>Gender: <?= htmlspecialchars($person['gender']) ?></li>
+        </ul>
+    <?php elseif (isset($person_list) && is_array($person_list)): ?>
+        <h1>People List</h1>
+        <ul>
+            <?php foreach ($person_list['results'] as $person): ?>
+                <li><?= htmlspecialchars($person['name']) ?></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php else: ?>
+        <p>No data available.</p>
+    <?php endif; ?>
+</body>
+</html>
