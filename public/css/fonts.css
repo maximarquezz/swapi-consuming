@@ -1,21 +1,42 @@
 /* Star Jedi */
 @font-face {
     font-family: 'Star Jedi';
-    src: url('/assets/fonts/star-jedi-font/StarJedi-DGRW.ttf') format('truetype');
+    src: url('../assets/fonts/star-jedi-font/StarJedi-DGRW.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Star Jedi Hollow';
-    src: url('/assets/fonts/star-jedi-font/StarJediHollow-A4lL.ttf') format('truetype');
+    src: url('../assets/fonts/star-jedi-font/StarJediHollow-A4lL.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Star Jedi Rounded';
-    src: url('/assets/fonts/star-jedi-font/StarJediRounded-jW3R.ttf') format('truetype');
+    src: url('../assets/fonts/star-jedi-font/StarJediRounded-jW3R.ttf') format('truetype');
 }
 
 /* Death Star */
 @font-face {
     font-family: 'Death Star Font';
-    src: url('/assets/fonts/death-star-font/DeathStar-VmWB.ttf') format('truetype');
+    src: url('../assets/fonts/death-star-font/DeathStar-VmWB.ttf') format('truetype');
+}
+
+/* Univers Font */
+@font-face {
+    font-family: 'Univers Font';
+    src: url('../assets/fonts/univers-font/Univers-light-normal.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Univers Black';
+    src: url('../assets/fonts/univers-font/UniversBlack.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Univers LTS Bold';
+    src: url('../assets/fonts/univers-font/UniversLTStd-Bold.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Univers LTS';
+    src: url('../assets/fonts/univers-font/UniversLTStd.otf') format('truetype');
 }
