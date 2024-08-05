@@ -45,7 +45,7 @@ class router{
         }
 
         //Ruta no encontrada
-        header('Location: 404.php');
+        echo '404 Not Found';
     }
     
 }
