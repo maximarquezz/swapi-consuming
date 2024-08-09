@@ -1,0 +1,36 @@
+<?php require_once BASE_PATH . '/app/controllers/species_controller.php'; ?>
+
+<section>
+    <?php if (isset($species_one)): ?>
+        <h1 class="font-bold mb-5 text-2xl">Species Details</h1>
+        <ul>
+            <li>Name: <?= htmlspecialchars($species_one['name']) ?></li>
+            <li>Classification: <?= htmlspecialchars($species_one['classification']) ?></li>
+            <li>Designation: <?= htmlspecialchars($species_one['designation']) ?></li>
+            <li>Average height: <?= htmlspecialchars($species_one['average_height']) ?></li>
+            <li>Skin colors: <?= htmlspecialchars($species_one['skin_colors']) ?></li>
+            <li>Hair colors: <?= htmlspecialchars($species_one['hair_colors']) ?></li>
+            <li>Eye colors: <?= htmlspecialchars($species_one['eye_colors']) ?></li>
+            <li>Average lifespan: <?= htmlspecialchars($species_one['average_lifespan']) ?></li>
+            <li>Language: <?= htmlspecialchars($species_one['language']) ?></li>
+        </ul>
+    <?php elseif (isset($species_list) && is_array($species_list)): ?>
+        <h1 class="font-bold mb-5 text-2xl">Species List</h1>
+        <ul>
+            <?php foreach ($species_list['results'] as $species): ?>
+                <?php
+                if (isset($species['url']) && !empty($species['url'])) {
+                    $url = $species['url'];
+                    $lastSlashPos = strrpos($url, '/', -2);
+                    $id = substr($url, $lastSlashPos + 1, -1);
+                } else {
+                    $id = 1;
+                }
+                ?>
+                <li><a href="<?= BASE_URL ?>/species/<?= htmlspecialchars($id) ?>"><?= htmlspecialchars($species['name']) ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php else: ?>
+        <p>No data available.</p>
+    <?php endif; ?>
+</section>

@@ -72,32 +72,32 @@ error_reporting(E_ALL);
         <section class=" relative w-[90%] h-[calc(100vh-168px)] border-x-2 border-neutral-900 flex flex-col flex-wrap items-center justify-evenly snap-x snap-mandatory overflow-x-auto"
         style="background:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('public/assets/images/hero.png'); background-repeat: no-repeat; background-position: center; background-size: cover">
 
-        <div class="sticky top-0 left-0 w-full h-full flex justify-between items-center">
-            <a class="mx-2 z-10" href=""><i class="fa-solid fa-greater-than scale-x-[-1] p-3 bg-neutral-500 rounded-full"></i></a>
-            <a class="mx-2 z-10" href=""><i class="fa-solid fa-greater-than p-3 bg-neutral-500 rounded-full"></i></a>
+        <div id="slider" class="sticky top-0 left-0 w-full h-full flex justify-between items-center">
+            <button id="moveLeft" class="mx-2 z-10"><i class="fa-solid fa-greater-than scale-x-[-1] p-3 bg-neutral-500 rounded-full"></i></button>
+            <button id="moveRight" class="mx-2 z-10"><i class="fa-solid fa-greater-than p-3 bg-neutral-500 rounded-full"></i></button>
         </div>
 
         <div class="w-full h-full flex justify-evenly items-center snap-center
         [&>article]:w-[25%] [&>article]:h-[90%] [&>article]:m-3 [&>article]:border-2 [&>article]:border-white [&>article]:relative [&>article]:rounded-bl-xl [&>article]:rounded-tr-xl">
             <article class="relative h-64 bg-cover bg-center shadow-2xl shadow-[rgba(255,255,255,0.2)] border-2 border-white group hover:border-[#ff0000]">
-                <a href="#" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/anakinskywalker.jpg)] hover:opacity-0"></a>
-                <a href="#" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out opacity-0 hover:opacity-100 bg-[url(<?php echo BASE_URL; ?>/public/assets/images/darthvader.jpg)]"></a>
-                <a href="#" class="transition-all duration-[0.2s] p-1 bg-white text-black absolute bottom-0 left-0 w-full rounded-bl-md rounded-tr-xl text-lg text-center tracking-wide font-bold group-hover:bg-[#ff0000] group-hover:text-white">
+                <a href="<?php echo BASE_URL; ?>/people" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/anakinskywalker.jpg)] hover:opacity-0"></a>
+                <a href="<?php echo BASE_URL; ?>/people" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out opacity-0 hover:opacity-100 bg-[url(<?php echo BASE_URL; ?>/public/assets/images/darthvader.jpg)]"></a>
+                <a href="<?php echo BASE_URL; ?>/people" class="transition-all duration-[0.2s] p-1 bg-white text-black absolute bottom-0 left-0 w-full rounded-bl-md rounded-tr-xl text-lg text-center tracking-wide font-bold group-hover:bg-[#ff0000] group-hover:text-white">
                     PEOPLE
                 </a>
             </article>
 
             <article class="relative h-64 bg-cover bg-center shadow-2xl shadow-[rgba(255,255,255,0.2)] border-2 border-white group hover:border-[#0015ff]">
-                <a href="#" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/revengeofthesith.webp)] hover:opacity-0"></a>
-                <a href="#" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out opacity-0 hover:opacity-100 bg-[url(<?php echo BASE_URL; ?>/public/assets/images/empirestrikesback.webp)]"></a>
-                <a href="#" class="transition-all duration-[0.2s] p-1 bg-white text-black absolute bottom-0 left-0 w-full rounded-bl-md rounded-tr-xl text-lg text-center tracking-wide font-bold group-hover:bg-[#0015ff] group-hover:text-white">
+                <a href="<?php echo BASE_URL; ?>/films" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/revengeofthesith.webp)] hover:opacity-0"></a>
+                <a href="<?php echo BASE_URL; ?>/films" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out opacity-0 hover:opacity-100 bg-[url(<?php echo BASE_URL; ?>/public/assets/images/empirestrikesback.webp)]"></a>
+                <a href="<?php echo BASE_URL; ?>/films" class="transition-all duration-[0.2s] p-1 bg-white text-black absolute bottom-0 left-0 w-full rounded-bl-md rounded-tr-xl text-lg text-center tracking-wide font-bold group-hover:bg-[#0015ff] group-hover:text-white">
                     FILMS
                 </a>
             </article>
             <article class="relative h-64 bg-cover bg-center shadow-2xl shadow-[rgba(255,255,255,0.2)] border-2 border-white group hover:border-[#00db1d]">
-                <a href="#" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/tatooine.jpeg)] hover:opacity-0"></a>
-                <a href="#" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out opacity-0 hover:opacity-100 bg-[url(<?php echo BASE_URL; ?>/public/assets/images/dagobah.jpg)]"></a>
-                <a href="#" class="transition-all duration-[0.2s] p-1 bg-white text-black absolute bottom-0 left-0 w-full rounded-bl-md rounded-tr-xl text-lg text-center tracking-wide font-bold group-hover:bg-[#00db1d] group-hover:text-white">
+                <a href="<?php echo BASE_URL; ?>/planets" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/tatooine.jpeg)] hover:opacity-0"></a>
+                <a href="<?php echo BASE_URL; ?>/planets" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out opacity-0 hover:opacity-100 bg-[url(<?php echo BASE_URL; ?>/public/assets/images/dagobah.jpg)]"></a>
+                <a href="<?php echo BASE_URL; ?>/planets" class="transition-all duration-[0.2s] p-1 bg-white text-black absolute bottom-0 left-0 w-full rounded-bl-md rounded-tr-xl text-lg text-center tracking-wide font-bold group-hover:bg-[#00db1d] group-hover:text-white">
                     PLANETS
                 </a>
             </article>
@@ -106,25 +106,25 @@ error_reporting(E_ALL);
         <div class="w-full h-full flex justify-evenly items-center snap-center
         [&>article]:w-[25%] [&>article]:h-[90%] [&>article]:m-3 [&>article]:border-2 [&>article]:border-white [&>article]:relative [&>article]:rounded-bl-xl [&>article]:rounded-tr-xl">
             <article class="relative h-64 bg-cover bg-center shadow-2xl shadow-[rgba(255,255,255,0.2)] border-2 border-white group hover:border-[#b402cc]">
-                <a href="#" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/wookie.jpg)] hover:opacity-0"></a>
-                <a href="#" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out opacity-0 hover:opacity-100 bg-[url(<?php echo BASE_URL; ?>/public/assets/images/kaminoan.jpeg)]"></a>
-                <a href="#" class="transition-all duration-[0.2s] p-1 bg-white text-black absolute bottom-0 left-0 w-full rounded-bl-md rounded-tr-xl text-lg text-center tracking-wide font-bold group-hover:bg-[#b402cc] group-hover:text-white">
+                <a href="<?php echo BASE_URL; ?>/species" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/wookie.jpg)] hover:opacity-0"></a>
+                <a href="<?php echo BASE_URL; ?>/species" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out opacity-0 hover:opacity-100 bg-[url(<?php echo BASE_URL; ?>/public/assets/images/kaminoan.jpeg)]"></a>
+                <a href="<?php echo BASE_URL; ?>/species" class="transition-all duration-[0.2s] p-1 bg-white text-black absolute bottom-0 left-0 w-full rounded-bl-md rounded-tr-xl text-lg text-center tracking-wide font-bold group-hover:bg-[#b402cc] group-hover:text-white">
                     SPECIES
                 </a>
             </article>
             
             <article class="relative h-64 bg-cover bg-center shadow-2xl shadow-[rgba(255,255,255,0.2)] border-2 border-white group hover:border-[#ff0]">
-                <a href="#" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/walker.jpg)] hover:opacity-0"></a>
-                <a href="#" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out opacity-0 hover:opacity-100 bg-[url(<?php echo BASE_URL; ?>/public/assets/images/landspeeder.jpg)]"></a>
-                <a href="#" class="transition-all duration-[0.2s] p-1 bg-white text-black absolute bottom-0 left-0 w-full rounded-bl-md rounded-tr-xl text-lg text-center tracking-wide font-bold group-hover:bg-[#ff0]">
+                <a href="<?php echo BASE_URL; ?>/vehicles" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/walker.jpg)] hover:opacity-0"></a>
+                <a href="<?php echo BASE_URL; ?>/vehicles" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out opacity-0 hover:opacity-100 bg-[url(<?php echo BASE_URL; ?>/public/assets/images/landspeeder.jpg)]"></a>
+                <a href="<?php echo BASE_URL; ?>/vehicles" class="transition-all duration-[0.2s] p-1 bg-white text-black absolute bottom-0 left-0 w-full rounded-bl-md rounded-tr-xl text-lg text-center tracking-wide font-bold group-hover:bg-[#ff0]">
                     VEHICLES
                 </a>
             </article>
             
             <article class="relative h-64 bg-cover bg-center shadow-2xl shadow-[rgba(255,255,255,0.2)] border-2 border-white group hover:border-[#0015ff]">
-                <a href="#" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/starship1.jpg)] hover:opacity-0"></a>
-                <a href="#" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out opacity-0 hover:opacity-100 bg-[url(<?php echo BASE_URL; ?>/public/assets/images/starship2.jpg)]"></a>
-                <a href="#" class="transition-all duration-[0.2s] p-1 bg-white text-black absolute bottom-0 left-0 w-full rounded-bl-md rounded-tr-xl text-lg text-center tracking-wide font-bold group-hover:bg-[#0015ff] group-hover:text-white">
+                <a href="<?php echo BASE_URL; ?>/starships" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/starship1.jpg)] hover:opacity-0"></a>
+                <a href="<?php echo BASE_URL; ?>/starships" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out opacity-0 hover:opacity-100 bg-[url(<?php echo BASE_URL; ?>/public/assets/images/starship2.jpg)]"></a>
+                <a href="<?php echo BASE_URL; ?>/starships" class="transition-all duration-[0.2s] p-1 bg-white text-black absolute bottom-0 left-0 w-full rounded-bl-md rounded-tr-xl text-lg text-center tracking-wide font-bold group-hover:bg-[#0015ff] group-hover:text-white">
                     STARSHIPS
                 </a>
             </article>
@@ -146,7 +146,6 @@ error_reporting(E_ALL);
                 <article>
                     <h4 class="font-bold p-3 text-2xl text-center bg-white text-black rounded-tr-xl">What is SWAPI?</h4>
                     <p class="p-3 text-xl">SWAPI is a public API that provides data about the Star Wars universe, including characters, planets, starships, and more. This API allows access to detailed information about the Star Wars saga programmatically.</p>
-                    <!--<a href="#" class="p-3 text-xl w-full bg-white text-black">GO TO SWAPI</a>-->
                 </article>
                 <article>
                     <h4 class="font-bold p-3 text-2xl text-center bg-white text-black rounded-tr-xl">How does this site work?</h4>
@@ -158,8 +157,8 @@ error_reporting(E_ALL);
                 </article>
             </div>
 
-            <div class="flex gap-5 text-2xl p-3 border-2 border-neutral-900 rounded-tr-xl rounded-bl-xl">
-                <a href="https://swapi.dev/" class="bg-white py-3 px-5 rounded-tr-xl rounded-bl-xl text-black font-bold">GO TO SWAPI</a>
+            <div class="flex gap-5 text-xl p-3 border-2 border-neutral-900 rounded-tr-xl rounded-bl-xl">
+                <a href="https://swapi.dev/" class="bg-white py-3 px-5 rounded-tr-xl rounded-bl-xl text-black font-bold">Go to SWAPI</a>
             </div>
         </section>
 
@@ -202,21 +201,21 @@ error_reporting(E_ALL);
         <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
             <div class="sm:flex sm:items-center sm:justify-between">
                 <p class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                    <img src="public/assets/icons/icon.png" class="h-8" alt="Star Wars Logo"/>
+                    <img src="<?php echo BASE_URL ?>/public/assets/icons/icon.png" class="h-8" alt="Star Wars Logo"/>
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Star Wars | API Data Hub</span>
                 </p>
-                <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0">
                     <li>
-                        <a href="#" class="me-4 md:me-6">API</a>
+                        <a href="#" class="font-bold me-4 md:me-6">API</a>
                     </li>
                     <li>
-                        <a href="#" class="me-4 md:me-6">Repository</a>
+                        <a href="#" class="font-bold me-4 md:me-6">Repository</a>
                     </li>
                     <li>
-                        <a href="#" class="me-4 md:me-6">Docs</a>
+                        <a href="#" class="font-bold me-4 md:me-6">Docs</a>
                     </li>
                     <li>
-                        <a href="#">Portfolio</a>
+                        <a href="#" class="font-bold">Portfolio</a>
                     </li>
                 </ul>
             </div>

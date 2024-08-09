@@ -1,0 +1,36 @@
+<?php require_once BASE_PATH . '/app/controllers/planets_controller.php'; ?>
+
+<section>
+    <?php if (isset($planet)): ?>
+        <h1 class="font-bold mb-5 text-2xl">Planet Details</h1>
+        <ul>
+            <li>Name: <?= htmlspecialchars($planet['name']) ?></li>
+            <li>Rotation period: <?= htmlspecialchars($planet['rotation_period']) ?></li>
+            <li>Orbital period: <?= htmlspecialchars($planet['orbital_period']) ?></li>
+            <li>Diameter: <?= htmlspecialchars($planet['diameter']) ?></li>
+            <li>Climate: <?= htmlspecialchars($planet['climate']) ?></li>
+            <li>Gravity: <?= htmlspecialchars($planet['gravity']) ?></li>
+            <li>Terrain: <?= htmlspecialchars($planet['terrain']) ?></li>
+            <li>Surface water: <?= htmlspecialchars($planet['surface_water']) ?></li>
+            <li>Population: <?= htmlspecialchars($planet['population']) ?></li>
+        </ul>
+    <?php elseif (isset($planets_list) && is_array($planets_list)): ?>
+        <h1 class="font-bold mb-5 text-2xl">Planets List</h1>
+        <ul>
+            <?php foreach ($planets_list['results'] as $planets): ?>
+                <?php
+                if (isset($planets['url']) && !empty($planets['url'])) {
+                    $url = $planets['url'];
+                    $lastSlashPos = strrpos($url, '/', -2);
+                    $id = substr($url, $lastSlashPos + 1, -1);
+                } else {
+                    $id = 1;
+                }
+                ?>
+                <li><a href="<?= BASE_URL ?>/planets/<?= htmlspecialchars($id) ?>"><?= htmlspecialchars($planets['name']) ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php else: ?>
+        <p>No data available.</p>
+    <?php endif; ?>
+</section>

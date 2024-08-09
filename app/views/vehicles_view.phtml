@@ -1,0 +1,36 @@
+<?php require_once BASE_PATH . '/app/controllers/vehicles_controller.php'; ?>
+
+<section>
+    <?php if (isset($vehicle)): ?>
+        <h1 class="font-bold mb-5 text-2xl">Vehicle Details</h1>
+        <ul>
+            <li>Name: <?= htmlspecialchars($vehicle['name']) ?></li>
+            <li>Model: <?= htmlspecialchars($vehicle['model']) ?></li>
+            <li>Manufacturer: <?= htmlspecialchars($vehicle['manufacturer']) ?></li>
+            <li>Cost in credits: <?= htmlspecialchars($vehicle['cost_in_credits']) ?></li>
+            <li>Length: <?= htmlspecialchars($vehicle['length']) ?></li>
+            <li>Max atmosphering speed: <?= htmlspecialchars($vehicle['max_atmosphering_speed']) ?></li>
+            <li>Crew: <?= htmlspecialchars($vehicle['crew']) ?></li>
+            <li>Passengers: <?= htmlspecialchars($vehicle['passengers']) ?></li>
+            <li>Starship class: <?= htmlspecialchars($vehicle['vehicle_class']) ?></li>
+        </ul>
+    <?php elseif (isset($vehicles_list) && is_array($vehicles_list)): ?>
+        <h1 class="font-bold mb-5 text-2xl">Vehicles List</h1>
+        <ul>
+            <?php foreach ($vehicles_list['results'] as $vehicles): ?>
+                <?php
+                if (isset($vehicles['url']) && !empty($vehicles['url'])) {
+                    $url = $vehicles['url'];
+                    $lastSlashPos = strrpos($url, '/', -2);
+                    $id = substr($url, $lastSlashPos + 1, -1);
+                } else {
+                    $id = 1;
+                }
+                ?>
+                <li><a href="<?= BASE_URL ?>/vehicles/<?= htmlspecialchars($id) ?>"><?= htmlspecialchars($vehicles['name']) ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php else: ?>
+        <p>No data available.</p>
+    <?php endif; ?>
+</section>

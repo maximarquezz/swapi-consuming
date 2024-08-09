@@ -24,26 +24,34 @@ $routes = [
         require_once 'app/controllers/films_controller.php';
     },
     'starships' => function(){
-        echo "Route: Starships";
-        //require_once 'app/controllers/starships_controller.php';
+        require_once 'app/controllers/starships_controller.php';
     },
     'vehicles' => function(){
-        echo "Route: Vehicles";
-        //require_once 'app/controllers/vehicles_controller.php';
+        require_once 'app/controllers/vehicles_controller.php';
     },
     'species' => function(){
-        echo "Route: Species";
-        //require_once 'app/controllers/species_controller.php';
+        require_once 'app/controllers/species_controller.php';
     },
     'planets' => function(){
-        echo "Route: Planets";
-        //require_once 'app/controllers/planets_controller.php';
+        require_once 'app/controllers/planets_controller.php';
     },
 
     //Rutas con page
-    'people/page/:id' => function($page) {
+    'people/page/:id' => function($page){
         echo "Page: $page";
         require_once 'app/controllers/people_controller.php';
+    },
+    'planets/page/:id' => function($page){
+        echo "Page: $page";
+        require_once 'app/controllers/planets_controller.php';
+    },
+    'starships/page/:id' => function($page){
+        echo "Page: $page";
+        require_once 'app/controllers/starships_controller.php';
+    },
+    'species/page/:id' => function($page){
+        echo "Page: $page";
+        require_once 'app/controllers/species_controller.php';
     },
 
     //Rutas con id
@@ -57,19 +65,18 @@ $routes = [
     },
     'starships/:id' => function($id){
         echo "Route: Starships with ID: $id";
-        //require_once 'app/controllers/starships_controller.php';
+        require_once 'app/controllers/starships_controller.php';
     },
     'vehicles/:id' => function($id){
-        echo "Route: Vehicles with ID: $id";
-        //require_once 'app/controllers/vehicles_controller.php';
+        require_once 'app/controllers/vehicles_controller.php';
     },
     'species/:id' => function($id){
         echo "Route: Species with ID: $id";
-        //require_once 'app/controllers/species_controller.php';
+        require_once 'app/controllers/species_controller.php';
     },
     'planets/:id' => function($id){
         echo "Route: Planets with ID: $id";
-        //require_once 'app/controllers/planets_controller.php';
+        require_once 'app/controllers/planets_controller.php';
     },
 ];
 

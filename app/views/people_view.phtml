@@ -4,16 +4,9 @@ require_once BASE_PATH . '/app/controllers/people_controller.php';
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>People</title>
-</head>
-<body>
+<section>
     <?php if (isset($person)): ?>
-        <h1>Person Details</h1>
+        <h1 class="font-bold mb-5 text-2xl">Person Details</h1>
         <ul>
             <li>Name: <?= htmlspecialchars($person['name']) ?></li>
             <li>Height: <?= htmlspecialchars($person['height']) ?></li>
@@ -26,14 +19,22 @@ require_once BASE_PATH . '/app/controllers/people_controller.php';
             <li>Gender: <?= htmlspecialchars($person['gender']) ?></li>
         </ul>
     <?php elseif (isset($person_list) && is_array($person_list)): ?>
-        <h1>People List</h1>
+        <h1 class="font-bold mb-5 text-2xl">People List</h1>
         <ul>
             <?php foreach ($person_list['results'] as $person): ?>
-                <li><?= htmlspecialchars($person['name']) ?></li>
+                <?php
+                if (isset($person['url']) && !empty($person['url'])) {
+                    $url = $person['url'];
+                    $lastSlashPos = strrpos($url, '/', -2);
+                    $id = substr($url, $lastSlashPos + 1, -1);
+                } else {
+                    $id = 1;
+                }
+                ?>
+                <li><a href="<?= BASE_URL ?>/people/<?= htmlspecialchars($id) ?>"><?= htmlspecialchars($person['name']) ?></a></li>
             <?php endforeach; ?>
         </ul>
     <?php else: ?>
         <p>No data available.</p>
     <?php endif; ?>
-</body>
-</html>
+</section>

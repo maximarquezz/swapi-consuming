@@ -4,26 +4,34 @@ require_once BASE_PATH . '/app/controllers/films_controller.php';
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Films</title>
-</head>
-<body>
+<section>
     <?php if (isset($film)): ?>
-        <h1>Films Details</h1>
-        <p>Name: <?= htmlspecialchars($film['title']) ?></p>
-    <?php elseif (isset($films_list) && is_array($films_list)): ?>
-        <h1>Films List</h1>
+        <h1 class="font-bold mb-5 text-2xl">Films Details</h1>
         <ul>
-            <?php foreach ($films_list['results'] as $film): ?>
-                <li><?= htmlspecialchars($film['title']) ?></li>
+            <li>Title: <?= htmlspecialchars($film['title']) ?></li>
+            <li>Opening crawl: <?= htmlspecialchars($film['opening_crawl']) ?></li>
+            <li>Director: <?= htmlspecialchars($film['director']) ?></li>
+            <li>Producer: <?= htmlspecialchars($film['producer']) ?></li>
+            <li>Release date: <?= htmlspecialchars($film['release_date']) ?></li>
+        </ul>
+    <?php elseif (isset($films_list) && is_array($films_list)): ?>
+        <h1 class="font-bold mb-5 text-2xl">Films List</h1>
+        <ul>
+            <?php foreach ($films_list['results'] as $films): ?>
+                <?php
+                if (isset($films['url']) && !empty($films['url'])) {
+                    $url = $films['url'];
+                    $lastSlashPos = strrpos($url, '/', -2);
+                    $id = substr($url, $lastSlashPos + 1, -1);
+                } else {
+                    $id = 1;
+                }
+                ?>
+                <li><a href="<?= BASE_URL ?>/films/<?= htmlspecialchars($id) ?>"><?= htmlspecialchars($films['title']) ?></a></li>
             <?php endforeach; ?>
         </ul>
     <?php else: ?>
         <p>No data available.</p>
     <?php endif; ?>
-</body>
+</section>
 </html>

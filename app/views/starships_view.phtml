@@ -1,0 +1,40 @@
+<?php require_once BASE_PATH . '/app/controllers/starships_controller.php'; ?>
+
+<section>
+    <?php if (isset($starship)): ?>
+        <h1 class="font-bold mb-5 text-2xl">Starship Details</h1>
+        <ul>
+            <li>Name: <?= htmlspecialchars($starship['name']) ?></li>
+            <li>Model: <?= htmlspecialchars($starship['model']) ?></li>
+            <li>Manufacturer: <?= htmlspecialchars($starship['manufacturer']) ?></li>
+            <li>Cost in credits: <?= htmlspecialchars($starship['cost_in_credits']) ?></li>
+            <li>Length: <?= htmlspecialchars($starship['length']) ?></li>
+            <li>Max atmosphering speed: <?= htmlspecialchars($starship['max_atmosphering_speed']) ?></li>
+            <li>Crew: <?= htmlspecialchars($starship['crew']) ?></li>
+            <li>Passengers: <?= htmlspecialchars($starship['passengers']) ?></li>
+            <li>Cargo capacity: <?= htmlspecialchars($starship['cargo_capacity']) ?></li>
+            <li>Consumables: <?= htmlspecialchars($starship['consumables']) ?></li>
+            <li>Hyperdrive rating: <?= htmlspecialchars($starship['hyperdrive_rating']) ?></li>
+            <li>MGLT: <?= htmlspecialchars($starship['MGLT']) ?></li>
+            <li>Starship class: <?= htmlspecialchars($starship['starship_class']) ?></li>
+        </ul>
+    <?php elseif (isset($starships_list) && is_array($starships_list)): ?>
+        <h1 class="font-bold mb-5 text-2xl">Starships List</h1>
+        <ul>
+            <?php foreach ($starships_list['results'] as $starships): ?>
+                <?php
+                if (isset($starships['url']) && !empty($starships['url'])) {
+                    $url = $starships['url'];
+                    $lastSlashPos = strrpos($url, '/', -2);
+                    $id = substr($url, $lastSlashPos + 1, -1);
+                } else {
+                    $id = 1;
+                }
+                ?>
+                <li><a href="<?= BASE_URL ?>/starships/<?= htmlspecialchars($id) ?>"><?= htmlspecialchars($starships['name']) ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php else: ?>
+        <p>No data available.</p>
+    <?php endif; ?>
+</section>

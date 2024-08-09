@@ -3,7 +3,8 @@
 require_once BASE_PATH . '/app/db/db.php';
 
 class people{
-    
+
+    //9 pages
     public function get_all_people(db $db, $page = 1) : array{
         $endpoint = "people/?page=$page";
         $data = $db->set_connection(trim($endpoint));

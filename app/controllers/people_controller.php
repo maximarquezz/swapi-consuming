@@ -10,10 +10,10 @@ $page = $page ?? null;
 
 if(isset($id)){
     $person = $people->get_people_by_id($db, $id);
-    require_once BASE_PATH . '/app/views/people_view.phtml';
 } else {
     $person_list = $people->get_all_people($db, $page);
-    require_once BASE_PATH . '/app/views/people_view.phtml';
 }
+
+require_once BASE_PATH . '/app/views/people_view.phtml';
 
 ?>
