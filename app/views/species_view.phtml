@@ -1,9 +1,7 @@
-<?php require_once BASE_PATH . '/app/controllers/species_controller.php'; ?>
-
-<section>
+<section class="h-screen w-full">
     <?php if (isset($species_one)): ?>
-        <h1 class="font-bold mb-5 text-2xl">Species Details</h1>
-        <ul>
+        <h1 class="font-bold p-3 border-b-2 border-neutral-900 text-center text-2xl">SPECIES DETAILS</h1>
+        <ul class="p-3">
             <li>Name: <?= htmlspecialchars($species_one['name']) ?></li>
             <li>Classification: <?= htmlspecialchars($species_one['classification']) ?></li>
             <li>Designation: <?= htmlspecialchars($species_one['designation']) ?></li>
@@ -15,8 +13,8 @@
             <li>Language: <?= htmlspecialchars($species_one['language']) ?></li>
         </ul>
     <?php elseif (isset($species_list) && is_array($species_list)): ?>
-        <h1 class="font-bold mb-5 text-2xl">Species List</h1>
-        <ul>
+        <h1 class="font-bold p-3 border-b-2 border-neutral-900 text-center text-2xl">SPECIES LIST</h1>
+        <ul class="p-3">
             <?php foreach ($species_list['results'] as $species): ?>
                 <?php
                 if (isset($species['url']) && !empty($species['url'])) {

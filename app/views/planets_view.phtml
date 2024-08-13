@@ -1,9 +1,7 @@
-<?php require_once BASE_PATH . '/app/controllers/planets_controller.php'; ?>
-
-<section>
+<section class="h-screen w-full">
     <?php if (isset($planet)): ?>
-        <h1 class="font-bold mb-5 text-2xl">Planet Details</h1>
-        <ul>
+        <h1 class="font-bold p-3 border-b-2 border-neutral-900 text-center text-2xl">PLANET DETAILS</h1>
+        <ul class="p-3">
             <li>Name: <?= htmlspecialchars($planet['name']) ?></li>
             <li>Rotation period: <?= htmlspecialchars($planet['rotation_period']) ?></li>
             <li>Orbital period: <?= htmlspecialchars($planet['orbital_period']) ?></li>
@@ -15,8 +13,8 @@
             <li>Population: <?= htmlspecialchars($planet['population']) ?></li>
         </ul>
     <?php elseif (isset($planets_list) && is_array($planets_list)): ?>
-        <h1 class="font-bold mb-5 text-2xl">Planets List</h1>
-        <ul>
+        <h1 class="font-bold p-3 border-b-2 border-neutral-900 text-center text-2xl">PLANETS LIST</h1>
+        <ul class="p-3">
             <?php foreach ($planets_list['results'] as $planets): ?>
                 <?php
                 if (isset($planets['url']) && !empty($planets['url'])) {

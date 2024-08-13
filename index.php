@@ -3,9 +3,9 @@
 define('BASE_PATH', realpath(__DIR__));
 define('BASE_URL', '/swapi');
 
-$currentUri = $_SERVER['REQUEST_URI'];
-$isBaseUrl = $currentUri === BASE_URL . '/';
-$isBaseUrlPath = strpos($currentUri, BASE_URL . '/') === 0;
+$current_uri = $_SERVER['REQUEST_URI'];
+$is_base_url = $current_uri === BASE_URL . '/';
+$is_base_url_path = strpos($current_uri, BASE_URL . '/') === 0;
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -42,7 +42,7 @@ error_reporting(E_ALL);
                 </ul>
 
                 <div>
-                    <img src="<?php echo BASE_URL; ?>/public/assets/images/logo.png" alt="Star Wars logo" width="200px">
+                    <a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL; ?>/public/assets/images/logo.png" alt="Star Wars logo" width="200px"></a>
                 </div>
 
                 <ul class="flex
@@ -55,21 +55,21 @@ error_reporting(E_ALL);
             <div class="w-full">
                 <ul class="flex items-center justify-center bg-black border-b-2 border-white font-bold
                 [&>li]:mx-4 [&>li]:p-2 [&>li]:text-gray-500">
-                    <li><a href="<?php echo BASE_URL; ?>/people"  class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-blue-400 hover:[text-shadow:_0_0_20px_rgb(0_8_255)]">PEOPLE</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>/films" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-green-400 hover:[text-shadow:_0_0_20px_rgb(0_255_17)]">FILMS</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>/planets" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-blue-400 hover:[text-shadow:_0_0_20px_rgb(0_8_255)]">PLANETS</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>/starships" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-red-500 hover:[text-shadow:_0_0_20px_rgb(255_46_46)]">STARSHIPS</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>/vehicles" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-yellow-500 hover:[text-shadow:_0_0_20px_rgb(255_225_0)]">VEHICLES</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>/people"  class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-red-500 hover:[text-shadow:_0_0_20px_rgb(255_46_46)]">PEOPLE</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>/films" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-blue-400 hover:[text-shadow:_0_0_20px_rgb(0_8_255)]">FILMS</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>/planets" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out  hover:text-green-400 hover:[text-shadow:_0_0_20px_rgb(0_255_17)]">PLANETS</a></li>
                     <li><a href="<?php echo BASE_URL; ?>/species" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-purple-500 hover:[text-shadow:_0_0_20px_rgb(0_8_255)]">SPECIES</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>/vehicles" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-yellow-500 hover:[text-shadow:_0_0_20px_rgb(255_225_0)]">VEHICLES</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>/starships" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out  hover:text-blue-400 hover:[text-shadow:_0_0_20px_rgb(0_8_255)]">STARSHIPS</a></li>
                 </ul>
             </div>
 
         </nav>
     </header>
 
-    <?php if ($isBaseUrlPath && $isBaseUrl): ?>
+    <?php if ($is_base_url_path && $is_base_url): ?>
     <main class="flex justify-evenly flex-col items-center">
-        <section class=" relative w-[90%] h-[calc(100vh-168px)] border-x-2 border-neutral-900 flex flex-col flex-wrap items-center justify-evenly snap-x snap-mandatory overflow-x-auto"
+        <section id="heroSlider" class="relative w-[90%] h-[calc(100vh-168px)] border-x-2 border-neutral-900 flex flex-col flex-wrap items-center justify-evenly snap-x snap-mandatory overflow-x-auto"
         style="background:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('public/assets/images/hero.png'); background-repeat: no-repeat; background-position: center; background-size: cover">
 
         <div id="slider" class="sticky top-0 left-0 w-full h-full flex justify-between items-center">
@@ -78,7 +78,7 @@ error_reporting(E_ALL);
         </div>
 
         <div class="w-full h-full flex justify-evenly items-center snap-center
-        [&>article]:w-[25%] [&>article]:h-[90%] [&>article]:m-3 [&>article]:border-2 [&>article]:border-white [&>article]:relative [&>article]:rounded-bl-xl [&>article]:rounded-tr-xl">
+        [&>article]:w-[25%] [&>article]:h-[90%] [&>article]:border-2 [&>article]:border-white [&>article]:relative [&>article]:rounded-bl-md [&>article]:rounded-tr-xl">
             <article class="relative h-64 bg-cover bg-center shadow-2xl shadow-[rgba(255,255,255,0.2)] border-2 border-white group hover:border-[#ff0000]">
                 <a href="<?php echo BASE_URL; ?>/people" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/anakinskywalker.jpg)] hover:opacity-0"></a>
                 <a href="<?php echo BASE_URL; ?>/people" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out opacity-0 hover:opacity-100 bg-[url(<?php echo BASE_URL; ?>/public/assets/images/darthvader.jpg)]"></a>
@@ -158,7 +158,7 @@ error_reporting(E_ALL);
             </div>
 
             <div class="flex gap-5 text-xl p-3 border-2 border-neutral-900 rounded-tr-xl rounded-bl-xl">
-                <a href="https://swapi.dev/" class="bg-white py-3 px-5 rounded-tr-xl rounded-bl-xl text-black font-bold">Go to SWAPI</a>
+                <a href="https://swapi.dev/" class="border-white border-2 bg-white py-3 px-5 rounded-tr-xl rounded-bl-xl text-black font-bold hover:bg-black hover:text-white transition-[0.3s]">Go to SWAPI</a>
             </div>
         </section>
 
@@ -206,16 +206,16 @@ error_reporting(E_ALL);
                 </p>
                 <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0">
                     <li>
-                        <a href="#" class="font-bold me-4 md:me-6">API</a>
+                        <a href="#" class="font-bold me-4 md:me-6 hover:[text-shadow:_0_0_20px_rgb(255_255_255_/70%)] hover:text-white transition-[0.3s]">API</a>
                     </li>
                     <li>
-                        <a href="#" class="font-bold me-4 md:me-6">Repository</a>
+                        <a href="#" class="font-bold me-4 md:me-6 hover:[text-shadow:_0_0_20px_rgb(255_255_255_/70%)] hover:text-white transition-[0.3s]">Repository</a>
                     </li>
                     <li>
-                        <a href="#" class="font-bold me-4 md:me-6">Docs</a>
+                        <a href="#" class="font-bold me-4 md:me-6 hover:[text-shadow:_0_0_20px_rgb(255_255_255_/70%)] hover:text-white transition-[0.3s]">Docs</a>
                     </li>
                     <li>
-                        <a href="#" class="font-bold">Portfolio</a>
+                        <a href="#" class="font-bold hover:[text-shadow:_0_0_20px_rgb(255_255_255_/70%)] hover:text-white transition-[0.3s]">Portfolio</a>
                     </li>
                 </ul>
             </div>
@@ -230,3 +230,16 @@ error_reporting(E_ALL);
 </body>
 
 </html>
+
+<style>
+#heroSlider {
+    overflow-x: scroll;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+#heroSlider::-webkit-scrollbar {
+    display: none;
+}
+
+</style>

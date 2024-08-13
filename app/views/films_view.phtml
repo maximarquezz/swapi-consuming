@@ -1,13 +1,7 @@
-<?php
-
-require_once BASE_PATH . '/app/controllers/films_controller.php';
-
-?>
-
-<section>
+<section class="h-screen w-full">
     <?php if (isset($film)): ?>
-        <h1 class="font-bold mb-5 text-2xl">Films Details</h1>
-        <ul>
+        <h1 class="font-bold p-3 border-b-2 border-neutral-900 text-center text-2xl">FILMS DETAILS</h1>
+        <ul class="p-3">
             <li>Title: <?= htmlspecialchars($film['title']) ?></li>
             <li>Opening crawl: <?= htmlspecialchars($film['opening_crawl']) ?></li>
             <li>Director: <?= htmlspecialchars($film['director']) ?></li>
@@ -15,8 +9,8 @@ require_once BASE_PATH . '/app/controllers/films_controller.php';
             <li>Release date: <?= htmlspecialchars($film['release_date']) ?></li>
         </ul>
     <?php elseif (isset($films_list) && is_array($films_list)): ?>
-        <h1 class="font-bold mb-5 text-2xl">Films List</h1>
-        <ul>
+        <h1 class="font-bold p-3 border-b-2 border-neutral-900 text-center text-2xl">FILMS LIST</h1>
+        <ul class="p-3">
             <?php foreach ($films_list['results'] as $films): ?>
                 <?php
                 if (isset($films['url']) && !empty($films['url'])) {

@@ -1,9 +1,7 @@
-<?php require_once BASE_PATH . '/app/controllers/starships_controller.php'; ?>
-
-<section>
+<section class="h-screen w-full">
     <?php if (isset($starship)): ?>
-        <h1 class="font-bold mb-5 text-2xl">Starship Details</h1>
-        <ul>
+        <h1 class="font-bold p-3 border-b-2 border-neutral-900 text-center text-2xl">STARSHIP DETAILS</h1>
+        <ul class="p-3">
             <li>Name: <?= htmlspecialchars($starship['name']) ?></li>
             <li>Model: <?= htmlspecialchars($starship['model']) ?></li>
             <li>Manufacturer: <?= htmlspecialchars($starship['manufacturer']) ?></li>
@@ -19,8 +17,8 @@
             <li>Starship class: <?= htmlspecialchars($starship['starship_class']) ?></li>
         </ul>
     <?php elseif (isset($starships_list) && is_array($starships_list)): ?>
-        <h1 class="font-bold mb-5 text-2xl">Starships List</h1>
-        <ul>
+        <h1 class="font-bold p-3 border-b-2 border-neutral-900 text-center text-2xl">STARSHIPS LIST</h1>
+        <ul class="p-3">
             <?php foreach ($starships_list['results'] as $starships): ?>
                 <?php
                 if (isset($starships['url']) && !empty($starships['url'])) {
