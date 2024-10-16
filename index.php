@@ -14,7 +14,7 @@ error_reporting(E_ALL);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -24,28 +24,31 @@ error_reporting(E_ALL);
     <link rel="stylesheet" href="public/css/fonts.css">
     <script src="https://kit.fontawesome.com/340d67c615.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/output.css">
 </head>
 
-<body class="text-white bg-black">
+<body class="text-white bg-black overflow-x-hidden">
     <header>
         <nav>
 
-            <div class="text-white flex justify-between p-5">
+            <div class="text-white flex justify-between p-5
+            [@media(max-width:630px)]:flex-wrap [@media(max-width:630px)]:border-b-2 [@media(max-width:630px)]:border-white">
                 <ul class="flex text-lg
-                [&>li]:mx-2 [&>div]:mx-2">
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                    <div class="w-[2px] h-7 bg-white rounded-full"></div>
+                [@media(max-width:630px)]:hidden">
+                    <li class="mx-2 [@media(max-width:670px)]:mx-1"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li class="mx-2 [@media(max-width:670px)]:mx-1"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li class="mx-2 [@media(max-width:670px)]:mx-1"><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li class="mx-2 [@media(max-width:670px)]:mx-1"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    <div class="mx-2 [@media(max-width:670px)]:mx-1 w-[2px] h-7 bg-white rounded-full"></div>
                     <a target="_blank" href="https://swapi.dev/"><img src="<?php echo BASE_URL; ?>/public/assets/images/swapi.png" alt="swapi logo" width="20px" height="20px" class="mt-[4.4px] ml-[5px]"></a>
                 </ul>
 
                 <div>
-                    <a href="<?php echo BASE_URL; ?>"><img src="<?php echo BASE_URL; ?>/public/assets/images/logo.png" alt="Star Wars logo" width="200px"></a>
+                    <a href="<?php echo BASE_URL; ?>"><img class="[@media(max-width:630px)]:w-[150px]" src="<?php echo BASE_URL; ?>/public/assets/images/logo.png" alt="Star Wars logo" width="200px"></a>
                 </div>
 
                 <ul class="flex
+                [@media(max-width:670px)]:gap-3 [@media(max-width:670px)]:flex-col [@media(max-width:670px)]:ml-10  
                 [&>li]:mx-3 [&>li]:text-md [&>li]:font-bold">
                     <li><a href="<?php echo BASE_URL; ?>"><i class="fa-solid fa-home mr-2"></i>HOME</a></li>
                     <li><a target="_blank" href="https://github.com/maximarquezz/swapi-consuming"><i class="fa-brands fa-github mr-2"></i>REPO</a></li>
@@ -54,13 +57,20 @@ error_reporting(E_ALL);
 
             <div class="w-full">
                 <ul class="flex items-center justify-center bg-black border-b-2 border-white font-bold
-                [&>li]:mx-4 [&>li]:p-2 [&>li]:text-gray-500">
-                    <li><a href="<?php echo BASE_URL; ?>/people"  class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-red-500 hover:[text-shadow:_0_0_20px_rgb(255_46_46)]">PEOPLE</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>/films" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-blue-400 hover:[text-shadow:_0_0_20px_rgb(0_8_255)]">FILMS</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>/planets" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out  hover:text-green-400 hover:[text-shadow:_0_0_20px_rgb(0_255_17)]">PLANETS</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>/species" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-purple-500 hover:[text-shadow:_0_0_20px_rgb(0_8_255)]">SPECIES</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>/vehicles" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-yellow-500 hover:[text-shadow:_0_0_20px_rgb(255_225_0)]">VEHICLES</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>/starships" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out  hover:text-blue-400 hover:[text-shadow:_0_0_20px_rgb(0_8_255)]">STARSHIPS</a></li>
+                [@media(max-width:870px)]:text-sm
+                [@media(max-width:630px)]:flex-wrap [@media(max-width:630px)]:items-start [@media(max-width:630px)]:w-full [@media(max-width:630px)]:mx-0 [@media(max-width:630px)]:border-b-0">
+                    <li class="mx-4 p-2 text-gray-500
+                    [@media(max-width:630px)]:mx-0 "><a href="<?php echo BASE_URL; ?>/people"  class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-red-500 hover:[text-shadow:_0_0_20px_rgb(255_46_46)]">PEOPLE</a></li>
+                    <li class="mx-4 p-2 text-gray-500
+                    [@media(max-width:630px)]:mx-0 "><a href="<?php echo BASE_URL; ?>/films" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-blue-400 hover:[text-shadow:_0_0_20px_rgb(0_8_255)]">FILMS</a></li>
+                    <li class="mx-4 p-2 text-gray-500
+                    [@media(max-width:630px)]:mx-0 [@media(max-width:630px)]:break-all"><a href="<?php echo BASE_URL; ?>/planets" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out  hover:text-green-400 hover:[text-shadow:_0_0_20px_rgb(0_255_17)]">PLANETS</a></li>
+                    <li class="mx-4 p-2 text-gray-500
+                    [@media(max-width:630px)]:mx-0 "><a href="<?php echo BASE_URL; ?>/species" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-purple-500 hover:[text-shadow:_0_0_20px_rgb(0_8_255)]">SPECIES</a></li>
+                    <li class="mx-4 p-2 text-gray-500
+                    [@media(max-width:630px)]:mx-0 "><a href="<?php echo BASE_URL; ?>/vehicles" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out hover:text-yellow-500 hover:[text-shadow:_0_0_20px_rgb(255_225_0)]">VEHICLES</a></li>
+                    <li class="mx-4 p-2 text-gray-500
+                    [@media(max-width:630px)]:mx-0 "><a href="<?php echo BASE_URL; ?>/starships" class="transition-all duration-[0.25] ease-in hover:duration-[0.25] hover:ease-out  hover:text-blue-400 hover:[text-shadow:_0_0_20px_rgb(0_8_255)]">STARSHIPS</a></li>
                 </ul>
             </div>
 
@@ -69,7 +79,9 @@ error_reporting(E_ALL);
 
     <?php if ($is_base_url_path && $is_base_url): ?>
     <main class="flex justify-evenly flex-col items-center">
-        <section id="heroSlider" class="relative w-[90%] h-[calc(100vh-168px)] border-x-2 border-neutral-900 flex flex-col flex-wrap items-center justify-evenly snap-x snap-mandatory overflow-x-auto"
+        <section id="heroSlider" class="relative w-[90%] h-[calc(100vh-168px)] border-x-2 border-neutral-900 flex flex-col flex-wrap items-center justify-evenly snap-x snap-mandatory overflow-x-auto
+        [@media(max-width:870px)]:w-full [@media(max-width:870px)]:border-[0px]
+        [@media(max-width:630px)]:hidden"
         style="background:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('public/assets/images/hero.png'); background-repeat: no-repeat; background-position: center; background-size: cover">
 
         <div id="slider" class="sticky top-0 left-0 w-full h-full flex justify-between items-center">
@@ -78,6 +90,7 @@ error_reporting(E_ALL);
         </div>
 
         <div class="w-full h-full flex justify-evenly items-center snap-center
+        [@media(max-width:870px)]:justify-center [@media(max-width:870px)]:gap-5
         [&>article]:w-[25%] [&>article]:h-[90%] [&>article]:border-2 [&>article]:border-white [&>article]:relative [&>article]:rounded-bl-md [&>article]:rounded-tr-xl">
             <article class="relative h-64 bg-cover bg-center shadow-2xl shadow-[rgba(255,255,255,0.2)] border-2 border-white group hover:border-[#ff0000]">
                 <a href="<?php echo BASE_URL; ?>/people" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/anakinskywalker.jpg)] hover:opacity-0"></a>
@@ -104,7 +117,8 @@ error_reporting(E_ALL);
         </div>    
             
         <div class="w-full h-full flex justify-evenly items-center snap-center
-        [&>article]:w-[25%] [&>article]:h-[90%] [&>article]:m-3 [&>article]:border-2 [&>article]:border-white [&>article]:relative [&>article]:rounded-bl-xl [&>article]:rounded-tr-xl">
+        [@media(max-width:870px)]:justify-center [@media(max-width:870px)]:gap-5
+        [&>article]:w-[25%] [&>article]:h-[90%] [&>article]:border-2 [&>article]:border-white [&>article]:relative [&>article]:rounded-bl-xl [&>article]:rounded-tr-xl">
             <article class="relative h-64 bg-cover bg-center shadow-2xl shadow-[rgba(255,255,255,0.2)] border-2 border-white group hover:border-[#b402cc]">
                 <a href="<?php echo BASE_URL; ?>/species" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out bg-[url(<?php echo BASE_URL; ?>/public/assets/images/wookie.jpg)] hover:opacity-0"></a>
                 <a href="<?php echo BASE_URL; ?>/species" class="rounded-bl-md rounded-tr-xl absolute inset-0 bg-cover bg-center transition-opacity duration-200 ease-out opacity-0 hover:opacity-100 bg-[url(<?php echo BASE_URL; ?>/public/assets/images/kaminoan.jpeg)]"></a>
@@ -138,22 +152,28 @@ error_reporting(E_ALL);
             <a href="people" class="font-bold tracking-wide bg-gray-800 rounded-md py-2 px-4 hover:bg-gray-500 duration-300">Try it yourself!</a>
         </section>
 
-        <section class="w-full h-screen border-t-2 border-white flex flex-col items-center justify-evenly"
+        <section class="w-full h-screen border-t-2 border-white flex flex-col items-center justify-evenly
+        [@media(max-width:950px)]:flex-row [@media(max-width:950px)]:flex-wrap [@media(max-width:950px)]:h-fit [@media(max-width:950px)]:gap-5 [@media(max-width:950px)]:p-5"
         style="background:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('public/assets/images/tryitbg2.jpeg'); background-repeat: no-repeat; background-position: center; background-size: cover">
-            <h3 class="font-bold text-6xl p-3 border-2 border-neutral-900 rounded-tr-xl rounded-bl-xl">ABOUT THIS SITE</h3>
+            <h3 class="font-bold text-6xl p-3 border-2 border-neutral-900 rounded-tr-xl rounded-bl-xl
+            [@media(max-width:950px)]:text-5xl">ABOUT THIS SITE</h3>
             <div class="flex justify-evenly items-center gap-10 w-[90%] p-5 border-y-2 border-neutral-900
+            [@media(max-width:950px)]:w-full [@media(max-width:950px)]:flex-wrap
             [&>article]:bg-neutral-900 [&>article]:rounded-tr-xl [&>article]:rounded-bl-xl [&>article]:border-b-2 [&>article]:border-white">
-                <article>
+                <article class="[@media(max-width:950px)]:w-full">
                     <h4 class="font-bold p-3 text-2xl text-center bg-white text-black rounded-tr-xl">What is SWAPI?</h4>
-                    <p class="p-3 text-xl">SWAPI is a public API that provides data about the Star Wars universe, including characters, planets, starships, and more. This API allows access to detailed information about the Star Wars saga programmatically.</p>
+                    <p class="p-3 text-xl
+                    [@media(max-width:950px)]:text-md">SWAPI is a public API that provides data about the Star Wars universe, including characters, planets, starships, and more. This API allows access to detailed information about the Star Wars saga programmatically.</p>
                 </article>
-                <article>
+                <article class="[@media(max-width:950px)]:w-full">
                     <h4 class="font-bold p-3 text-2xl text-center bg-white text-black rounded-tr-xl">How does this site work?</h4>
-                    <p class="p-3 text-xl">This site uses the SWAPI to display data about the Star Wars universe. Data is retrieved through API requests and presented interactively and visually on the site, allowing fans to explore information easily.</p>
+                    <p class="p-3 text-xl
+                    [@media(max-width:950px)]:text-md">This site uses the SWAPI to display data about the Star Wars universe. Data is retrieved through API requests and presented interactively and visually on the site, allowing fans to explore information easily.</p>
                 </article>
-                <article>
+                <article class="[@media(max-width:950px)]:w-full">
                     <h4 class="font-bold p-3 text-2xl text-center bg-white text-black rounded-tr-xl">What can I find on this site?</h4>
-                    <p class="p-3 text-xl">On this site, you can explore details about characters, planets, starships, and species from the Star Wars universe. You can search for specific information, view lists of related items, and learn more about each aspect of the saga.</p>
+                    <p class="p-3 text-xl
+                    [@media(max-width:950px)]:text-md">On this site, you can explore details about characters, planets, starships, and species from the Star Wars universe. You can search for specific information, view lists of related items, and learn more about each aspect of the saga.</p>
                 </article>
             </div>
 
@@ -161,34 +181,6 @@ error_reporting(E_ALL);
                 <a href="https://swapi.dev/" class="border-white border-2 bg-white py-3 px-5 rounded-tr-xl rounded-bl-xl text-black font-bold hover:bg-black hover:text-white transition-[0.3s]">Go to SWAPI</a>
             </div>
         </section>
-
-        <!--<section class="h-[3300px] w-screen border-y-2 border-white flex justify-evenly items-start"> 
-            <div></div> 
-            <article class="relative w-screen h-screen top-0 flex flex-col overflow-hidden justify-evenly items-center sticky
-            before:content-[''] before:absolute before:top-0 before:left-0 before:bg-red-500 before:w-5" style="perspective: 300px; perspective-origin: bottom; background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),   url('public/assets/images/space.jpg');">
-               
-                <div id="crawl" class="flex flex-col justify-evenly items-center h-[1500px] p-10
-                [&>p]:text-[#ffe81f] [&>p]:font-['Univers_Black'] [&>p]:w-[60%] text-xl font-extrabold" style="transform: rotateX(0deg)">
-                    <img class="mt-[2000px]" src="public/assets/images/yellowlogo.png" alt="Star Wars Yellow Logo" width="600px" style="transform: rotateX(0deg)">
-                    
-                    <p class="text-[3rem] leading-10 text-center mb-10">Episode I</p>
-                    <p class="text-[3rem] leading-10 font-bold text-center mb-10 font-['Star_Jedi]">API DATA HUB</p>
-
-                    <p class="text-justify leading-10">
-                        The galaxy is in turmoil. The ancient art of coding, once mastered by only a few, has now spread across the stars. Programmers, known as Code Warriors, harness their skills to create and transform with the flick of a keystroke.
-                        <br><br>
-                        On the distant planet of Java, a young developer named Maxo has uncovered a long-forgotten API, hidden away for centuries. This API, known as SWAPI, holds the secrets to accessing the deepest data of the Star Wars universe, and has the power to build applications that could restore balance to the galaxy.
-                        <br><br>
-                        But the dark forces of Bugs and Errors, led by the malevolent Lord Legacy Code, seek to seize this power for themselves. As Maxo begins his journey, he must master the power of the SWAPI and confront the challenges that lie ahead.
-                        <br><br>
-                        With the aid of fellow developers, Maxo embarks on a quest to master this ancient API and bring peace and stability to the digital realm. The fate of the web world hangs in the balance as the epic battle between good and evil unfolds...
-                        <br><br>
-                        May the Code be with you.
-                    </p>
-
-                </div>
-            </article>
-        </section>-->
     </main>
     <?php endif ?>
 
@@ -224,8 +216,6 @@ error_reporting(E_ALL);
         </div>
     </footer>
 
-
-
     <script src="public/js/main.js"></script>
 </body>
 
@@ -236,6 +226,7 @@ error_reporting(E_ALL);
     overflow-x: scroll;
     white-space: nowrap;
     scrollbar-width: none;
+
 }
 
 #heroSlider::-webkit-scrollbar {
