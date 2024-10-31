@@ -18,56 +18,56 @@ $routes = [
     '' => function(){
     },
     'people' => function(){
-        require_once 'app/controllers/people_controller.php';
+        require_once BASE_PATH . '/app/controllers/people_controller.php';
     },
     'films' => function(){
-        require_once 'app/controllers/films_controller.php';
+        require_once BASE_PATH . '/app/controllers/films_controller.php';
     },
     'starships' => function(){
-        require_once 'app/controllers/starships_controller.php';
+        require_once BASE_PATH . '/app/controllers/starships_controller.php';
     },
     'vehicles' => function(){
-        require_once 'app/controllers/vehicles_controller.php';
+        require_once BASE_PATH . '/app/controllers/vehicles_controller.php';
     },
     'species' => function(){
-        require_once 'app/controllers/species_controller.php';
+        require_once BASE_PATH . '/app/controllers/species_controller.php';
     },
     'planets' => function(){
-        require_once 'app/controllers/planets_controller.php';
+        require_once BASE_PATH . '/app/controllers/planets_controller.php';
     },
 
     //Rutas con page
     'people/page/:id' => function($page){
-        require_once 'app/controllers/people_controller.php';
+        require_once BASE_PATH . '/app/controllers/people_controller.php';
     },
     'planets/page/:id' => function($page){
-        require_once 'app/controllers/planets_controller.php';
+        require_once BASE_PATH . '/app/controllers/planets_controller.php';
     },
     'starships/page/:id' => function($page){
-        require_once 'app/controllers/starships_controller.php';
+        require_once BASE_PATH . '/app/controllers/starships_controller.php';
     },
     'species/page/:id' => function($page){
-        require_once 'app/controllers/species_controller.php';
+        require_once BASE_PATH . '/app/controllers/species_controller.php';
     },
 
     //Rutas con id
     'people/:id' => function($id){
-        require_once 'app/controllers/people_controller.php';
+        require_once BASE_PATH . '/app/controllers/people_controller.php';
     },
     'films/:id' => function($id){
-        require_once 'app/controllers/films_controller.php';
+        require_once BASE_PATH . '/app/controllers/films_controller.php';
     },
     'starships/:id' => function($id){
-        require_once 'app/controllers/starships_controller.php';
+        require_once BASE_PATH . '/app/controllers/starships_controller.php';
     },
     'vehicles/:id' => function($id){
-        require_once 'app/controllers/vehicles_controller.php';
+        require_once BASE_PATH . '/app/controllers/vehicles_controller.php';
     },
     'species/:id' => function($id){
-        require_once 'app/controllers/species_controller.php';
+        require_once BASE_PATH . '/app/controllers/species_controller.php';
     },
     'planets/:id' => function($id){
-        require_once 'app/controllers/planets_controller.php';
+        require_once BASE_PATH . '/app/controllers/planets_controller.php';
     },
 ];
 

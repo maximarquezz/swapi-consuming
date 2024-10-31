@@ -1,6 +1,6 @@
 <?php
 
-define('BASE_PATH', realpath(__DIR__));
+define('BASE_PATH', dirname(__FILE__));
 define('BASE_URL', '/swapi');
 
 $current_uri = $_SERVER['REQUEST_URI'];
@@ -185,8 +185,8 @@ error_reporting(E_ALL);
     <?php endif ?>
 
     <?php
-    require_once 'lib/router.php';
-    require_once 'routes/web.php';
+    require_once BASE_PATH . '/lib/router.php';
+    require_once BASE_PATH . '/routes/web.php';
     ?>
 
     <footer class="bg-black border-t-2 border-white">
