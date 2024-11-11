@@ -3,10 +3,6 @@
 $script_name = $_SERVER['SCRIPT_NAME'];
 $base_path = basename(dirname($script_name));
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require_once BASE_PATH . '/lib/router.php';
 require_once BASE_PATH . '/app/models/people.php';
 

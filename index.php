@@ -1,15 +1,22 @@
 <?php
 
 define('BASE_PATH', dirname(__FILE__));
-define('BASE_URL', '/swapi');
+define('BASE_URL', dirname($_SERVER['SCRIPT_NAME']));
 
 $current_uri = $_SERVER['REQUEST_URI'];
 $is_base_url = $current_uri === BASE_URL . '/';
 $is_base_url_path = strpos($current_uri, BASE_URL . '/') === 0;
 
+require BASE_PATH . '/vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+/*
 ini_set('display_errors', 1);
+
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+*/
 
 ?>
 
